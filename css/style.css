@@ -1,0 +1,180 @@
+/** Google Fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i|Open+Sans:400,400i,600,600i,700,700i,800,800i|Quicksand:300,400,500,700|Roboto+Mono:300,300i,400,400i,500,500i,700,700i|Roboto:400,400i,500,500i,700,700i,900&display=swap');
+
+/* Initial Style */
+*, body, html{
+    margin:0;
+    padding:0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/** Scroll bar style */
+body::-webkit-scrollbar { width:10px; background:#e3e0d6; } /* configurando scroll */
+body::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.808); }
+body::-webkit-scrollbar-thumb { border-radius:0; background:#c9c9c9;  }
+
+#container-user-info-full-repos::-webkit-scrollbar { width:6px; background:#e3e0d6; } /* configurando scroll */
+#container-user-info-full-repos::-webkit-scrollbar-track { background: rgb(226, 226, 226); }
+#container-user-info-full-repos::-webkit-scrollbar-thumb { border-radius:0px; background:#000;  }
+
+/** Estilos Gerais */
+.span-i{
+    font-style: italic;
+    font-weight: 100;
+}
+
+.span-interarions{
+    display: inherit;
+}
+
+.container{
+    position: relative;
+}
+
+/* Search bar */
+.search-bar{
+    max-width: 100%;
+    position: relative;
+    background-color: #090909;
+    text-align: center;
+    padding: 15px;
+}
+
+.search-bar-fixed{
+    max-width: 100%;
+    position: fixed;
+    background-color: #090909;
+    text-align: center;
+    padding: 15px;
+    display: block;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+}
+
+.input-text{    
+    width: 50%;
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background-color: transparent;
+    outline: none !important;
+    padding: 5px;
+    color:#efefef;
+}
+
+/* Global Infos*/
+
+#container-user-infos{
+    margin-top:30px;
+}
+
+div.englobatudo{
+    margin: 0 auto;
+    position:relative;
+    width: 70%;
+}
+
+/* Profile */
+
+#user-info-preview{
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+img.user-info-img{
+    border-radius: 100%;
+    max-width: 300px;
+}
+
+div.div-follow-info-user{
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    text-align: center !important;
+    margin-top: 25px;
+}
+
+p.followei{
+    font-size: 30px;
+    margin-bottom: 0;
+    background-color: #090909;
+    color: #fff;
+}
+
+p.sub-followei{
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.btn-show-profile{
+    text-decoration:none;
+}
+
+.span-login-user{
+    font-weight:bold;
+    color:#000;
+}
+
+.span-email-user{
+    color:#000;
+}
+
+.span-bio-user{
+    color:#000;
+}
+
+/* Repos */
+#container-user-info-full-repos{
+    margin: 40px auto;
+    position: relative;
+    width: 95%;
+    height:auto; 
+    max-height:60vh; 
+    overflow-y: auto; 
+    overflow-x:hidden;
+}
+
+.user-info-full-repos{
+    margin: 20px;
+    padding: 20px;
+    background-color: #e6e6e6;
+}
+
+.a-url-repo-user{
+    text-decoration: none;
+}
+
+.repo-user-name{
+    color:#000;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.span-language{
+    color:#000;
+    font-size: 15px;
+}
+
+.repo-user-description{
+    color:#000;
+}
+
+.repo-user-stargazerscount{
+    color:#000;
+}
+
+/* Footer */
+.footer {
+    position: relative;
+    right: 0;
+    bottom: 0 !important;
+    left: 0;
+    padding: 1rem;
+    background-color: #090909;
+    text-align: center;
+    color:#e9e9e9;
+    margin-top: 20px;
+}
