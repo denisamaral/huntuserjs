@@ -7,6 +7,7 @@
     margin:0;
     padding:0;
     font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
 }
 
 /** Scroll bar style */
@@ -16,7 +17,16 @@ body::-webkit-scrollbar-thumb { border-radius:0; background:#c9c9c9;  }
 
 #container-user-info-full-repos::-webkit-scrollbar { width:6px; background:#e3e0d6; } /* configurando scroll */
 #container-user-info-full-repos::-webkit-scrollbar-track { background: rgb(226, 226, 226); }
-#container-user-info-full-repos::-webkit-scrollbar-thumb { border-radius:0px; background:#000;  }
+#container-user-info-full-repos::-webkit-scrollbar-thumb { border-radius:0px; background:#24292e;  }
+
+/* reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
 
 /** Estilos Gerais */
 .span-i{
@@ -32,36 +42,45 @@ body::-webkit-scrollbar-thumb { border-radius:0; background:#c9c9c9;  }
     position: relative;
 }
 
+i.fa-star{
+    color:#eaa90f;
+}
+
 /* Search bar */
 .search-bar{
     max-width: 100%;
     position: relative;
-    background-color: #090909;
+    background-color: #24292e;
     text-align: center;
     padding: 15px;
+    transition-duration: 0.6s;
+    /*transition: 0.6s;*/
+
 }
 
 .search-bar-fixed{
     max-width: 100%;
     position: fixed;
-    background-color: #090909;
+    background-color: #24292e;
     text-align: center;
-    padding: 15px;
+    padding: 20px;
     display: block;
     width: 100%;
     top: 0;
     z-index: 999;
+    transition-duration: 0.6s;
 }
 
 .input-text{    
     width: 50%;
-    font-size: 18px;
+    font-size: 1.2em;
     border: none;
     border-bottom: 1px solid #fff;
     background-color: transparent;
     outline: none !important;
     padding: 5px;
     color:#efefef;
+    border-radius: none;
 }
 
 /* Global Infos*/
@@ -70,7 +89,7 @@ body::-webkit-scrollbar-thumb { border-radius:0; background:#c9c9c9;  }
     margin-top:30px;
 }
 
-div.englobatudo{
+div.infos-profile{
     margin: 0 auto;
     position:relative;
     width: 70%;
@@ -86,7 +105,8 @@ div.englobatudo{
 
 img.user-info-img{
     border-radius: 100%;
-    max-width: 300px;
+    width: 300px;
+    max-width:100%;
 }
 
 div.div-follow-info-user{
@@ -98,15 +118,18 @@ div.div-follow-info-user{
 }
 
 p.followei{
-    font-size: 30px;
+    font-size: 1.55em;
     margin-bottom: 0;
-    background-color: #090909;
+    background-color: #1c2023;
     color: #fff;
+    transition: 0.2s;
+    border-radius:1px;
 }
 
 p.sub-followei{
-    font-size: 20px;
+    font-size: 1.2em;
     margin-top: 0;
+    transition: 0.2s;
 }
 
 .btn-show-profile{
@@ -115,15 +138,15 @@ p.sub-followei{
 
 .span-login-user{
     font-weight:bold;
-    color:#000;
+    color:#1c2023;
 }
 
 .span-email-user{
-    color:#000;
+    color:#1c2023;
 }
 
 .span-bio-user{
-    color:#000;
+    color:#1c2023;
 }
 
 /* Repos */
@@ -145,10 +168,29 @@ p.sub-followei{
 
 .a-url-repo-user{
     text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
+    margin-top: 5px;
+    background-color: #24292e;
+    padding: 8px;
+    color: #fff;
+    border-radius:2px;
+}
+
+.a-url-repo-user:hover{
+    background-color:#1c2023;
 }
 
 .repo-user-name{
-    color:#000;
+    color:#1c2023;
     font-weight: bold;
     font-size: 20px;
 }
@@ -173,8 +215,115 @@ p.sub-followei{
     bottom: 0 !important;
     left: 0;
     padding: 1rem;
-    background-color: #090909;
+    background-color: #1c2023;
     text-align: center;
     color:#e9e9e9;
     margin-top: 20px;
+}
+
+@media (max-width: 1020px) {
+    
+    p.followei{
+        font-size: 1.5em;
+        margin-bottom: 0;
+        background-color: #1c2023;
+        color: #fff;
+        transition: 0.2s;
+        
+    }
+    
+    p.sub-followei{
+        font-size: 1.1em;
+        margin-top: 0;
+        transition: 0.2s;
+    }
+
+}
+
+@media (max-width: 812px) {
+    
+    .input-text{    
+        font-size: 1em;
+    }
+
+    /* Profile */
+    img.user-info-img{
+        border-radius: 100%;
+        width: 250px;
+        max-width:100%;
+    } 
+
+    p.followei{
+        font-size: 1.5em;
+        margin-bottom: 0;
+        background-color: #1c2023;
+        color: #fff;
+        transition: 0.2s;
+    }
+    
+    p.sub-followei{
+        font-size: 1.1em;
+        margin-top: 0;
+        transition: 0.2s;
+    }
+    /* Repos */
+    #container-user-info-full-repos{
+        margin: 20px auto ;
+    }
+
+    .a-url-repo-user{
+        background-color: #24292e;
+        padding: 8px;
+        color: #fff;
+        font-size:0.9em;
+    }
+
+    /* FOOTER */
+    .footer {
+        width:100%;
+        font-size: 0.95em;
+    }
+
+}
+
+@media (max-width: 360px) {
+    /* Profile */
+    img.user-info-img{
+        border-radius: 100%;
+        width: 250px;
+        max-width:100%;
+    } 
+
+    p.followei{
+        font-size: 1.5em;
+        margin-bottom: 0;
+        background-color: #1c2023;
+        color: #fff;
+        transition: 0.2s;
+    }
+    
+    p.sub-followei{
+        font-size: 1.1em;
+        margin-top: 0;
+        transition: 0.2s;
+    }
+
+    /* Repos */
+    #container-user-info-full-repos{
+        margin: 20px auto ;
+    }
+
+    .a-url-repo-user{
+        background-color: #000;
+        padding: 8px;
+        color: #fff;
+        font-size:0.82em;
+    }
+
+    /* FOOTER */
+    .footer {
+        width:100%;
+        font-size: 0.8em;
+    }
+
 }
