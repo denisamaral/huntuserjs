@@ -159,8 +159,6 @@ p.sub-followei{
     overflow-y: auto; 
     overflow-x:hidden;
     -webkit-overflow-scrolling: touch;
-    -moz-overflow-scrolling: touch;
-    overflow-scrolling: touch;
 }
 
 .user-info-full-repos{
