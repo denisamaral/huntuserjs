@@ -46,6 +46,11 @@ i.fa-star{
     color:#eaa90f;
 }
 
+input[type="text"]{
+    -webkit-appearance:none;
+    border-radius:0;
+}
+
 /* Search bar */
 .search-bar{
     max-width: 100%;
