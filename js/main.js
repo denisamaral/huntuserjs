@@ -119,11 +119,30 @@
             let output = '';
 
             repos.forEach(repo => {
+
+                var repoName = repo.name;
+                
+                if(repoName == null || repoName == undefined || repoName == ""){
+                    repoName = "Nome não disponível";
+                }
+
+                var repoLanguage = repo.language;
+                
+                if(repoLanguage == null || repoLanguage == undefined || repoLanguage == ""){
+                    repoLanguage = "Linguagem não informada";
+                }
+                
+                var repoDescription = repo.description;
+                
+                if(repoDescription == null || repoDescription == undefined || repoDescription == ""){
+                    repoDescription = "Descrição não informada";
+                }
+
                 output += `<div class="user-info-full-repos">
                 
                     <div>
-                        <p class="repo-user-name"> <i class="fa fa-folder"></i> ${repo.name} &bull; <span class="span-i span-language"> ${repo.language} </span> </p>
-                        <p class="repo-user-description">${repo.description}</p>
+                        <p class="repo-user-name"> <i class="fa fa-folder"></i> ${repoName} &bull; <span class="span-i span-language"> ${repoLanguage} </span> </p>
+                        <p class="repo-user-description">${repoDescription}</p>
                         <p class="repo-user-stargazerscount"> <i class="fa fa-star"></i> ${repo.stargazers_count}</p>
                         
                         <p> <a href="${repo.html_url}" class="a-url-repo-user" target="_blank"> Visitar Repositório </a> </p>
