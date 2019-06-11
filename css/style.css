@@ -80,7 +80,10 @@ i.fa-star{
     outline: none !important;
     padding: 5px;
     color:#efefef;
-    border-radius: none;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-appearance:none;
+    appearance:none;
 }
 
 /* Global Infos*/
