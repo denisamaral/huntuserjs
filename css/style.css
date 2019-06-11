@@ -161,6 +161,10 @@ p.sub-followei{
     -webkit-overflow-scrolling: touch;
 }
 
+#container-user-info-full-repos > * {
+    -webkit-transform: translateZ(0px);
+}
+
 .user-info-full-repos{
     margin: 20px;
     padding: 20px;
