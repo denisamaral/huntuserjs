@@ -47,7 +47,7 @@
 
         var urlAvatarUser = user.avatar_url; 
         if((urlAvatarUser == "") || (urlAvatarUser == null)){
-            urlAvatarUser = "https://image.flaticon.com/icons/png/512/149/149071.png";
+            urlAvatarUser = "./img/user-undefined.png";
         }
         
         var bioUser = user.bio; 
