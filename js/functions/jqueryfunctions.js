@@ -1,15 +1,18 @@
 $(function() {
     
+    var searchBar = $('.search-bar');
+    var searchBarFixed = 'search-bar-fixed';
+
     $("#container-user-info-full-repos").sortable();
 
-    $(window).bind('scroll', function () {
-      
-      if ($(window).scrollTop() > 50) {
-          $('.search-bar').addClass('search-bar-fixed');
-      } else {
-          $('.search-bar').removeClass('search-bar-fixed');
-      }
-
-    });
+    $(window).scroll(function(){
+        
+        if($(window).scrollTop() <= 1){
+            $(searchBar).removeClass(searchBarFixed);
+		} else {
+            $(searchBar).addClass(searchBarFixed);
+        }
+        
+	});
 
 });

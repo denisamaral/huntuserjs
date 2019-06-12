@@ -45,9 +45,6 @@
             userLogin = "Usuário inexistente";
         }
 
-        /** https://image.flaticon.com/icons/png/512/149/149071.png */ 
-        /** https://image.flaticon.com/icons/png/512/149/149071.png */
-
         var urlAvatarUser = user.avatar_url; 
         if((urlAvatarUser == "") || (urlAvatarUser == null)){
             urlAvatarUser = "https://image.flaticon.com/icons/png/512/149/149071.png";
@@ -74,14 +71,15 @@
         }
 
         containerUserInfo.innerHTML = `
-            <div class="englobatudo">
-                <a href="${urlProfileUser}" target="_blank" class="btn-show-profile">        
+            <div class="infos-profile">
+                <div>        
                     <img class="user-info-img" src="${urlAvatarUser}" alt="Avatar do Usuário" title="Avatar do Usuário">  
-                    <br>
-                    <span class="span-login-user"> <i class="fa fa-user"></i> ${userLogin} </span> &bull; <span class="span-i span-bio-user"> <i class="fa fa-pencil"></i> ${bioUser}</span>
-                    <br>
-                    <span class="span-email-user"> <i class="fa fa-envelope"></i> ${emailUser}</span>    
-                </a>
+                </div>
+                <br>
+                <a href="${urlProfileUser}" target="_blank" class="btn-show-profile"><span class="span-login-user"> <i class="fa fa-user"></i> ${userLogin} </span> </a> &bull; <span class="span-i span-bio-user"> <i class="fa fa-pencil"></i> ${bioUser}</span>
+                <br>
+                <span class="span-email-user"> <i class="fa fa-envelope"></i> ${emailUser}</span>    
+                
 
                 <div class="div-follow-info-user">
 
@@ -99,7 +97,8 @@
                         </span>                         
                     </span>                    
 
-                </div>                    
+                </div>
+
             </div>
             
         `;
@@ -118,17 +117,34 @@
             repos.reverse();
             
             let output = '';
-            
-            
 
             repos.forEach(repo => {
+
+                var repoName = repo.name;
+                
+                if(repoName == null || repoName == undefined || repoName == ""){
+                    repoName = "Nome não disponível";
+                }
+
+                var repoLanguage = repo.language;
+                
+                if(repoLanguage == null || repoLanguage == undefined || repoLanguage == ""){
+                    repoLanguage = "Linguagem não informada";
+                }
+                
+                var repoDescription = repo.description;
+                
+                if(repoDescription == null || repoDescription == undefined || repoDescription == ""){
+                    repoDescription = "Descrição não informada";
+                }
+
                 output += `<div class="user-info-full-repos">
                 
                     <div>
-                        <p class="repo-user-name"> <i class="fa fa-folder"></i> ${repo.name} &bull; <span class="span-i span-language"> ${repo.language} </span> </p>
-                        <p class="repo-user-description">${repo.description}</p>
+                        <p class="repo-user-name"> <i class="fa fa-folder"></i> ${repoName} &bull; <span class="span-i span-language"> ${repoLanguage} </span> </p>
+                        <p class="repo-user-description">${repoDescription}</p>
                         <p class="repo-user-stargazerscount"> <i class="fa fa-star"></i> ${repo.stargazers_count}</p>
-                        <br>
+                        
                         <p> <a href="${repo.html_url}" class="a-url-repo-user" target="_blank"> Visitar Repositório </a> </p>
                     </div>
                     
@@ -137,11 +153,9 @@
             
             document.getElementById("container-user-info-full-repos").innerHTML = output;
 
-        } else{
+        } else {
             document.getElementById("container-user-info-full-repos").innerHTML = "";
         }
-        
-        
 
     }
 

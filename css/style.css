@@ -46,6 +46,11 @@ i.fa-star{
     color:#eaa90f;
 }
 
+input[type="text"]{
+    -webkit-appearance:none;
+    border-radius:0;
+}
+
 /* Search bar */
 .search-bar{
     max-width: 100%;
@@ -80,7 +85,10 @@ i.fa-star{
     outline: none !important;
     padding: 5px;
     color:#efefef;
-    border-radius: none;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-appearance:none;
+    appearance:none;
 }
 
 /* Global Infos*/
@@ -159,8 +167,12 @@ p.sub-followei{
     overflow-y: auto; 
     overflow-x:hidden;
     -webkit-overflow-scrolling: touch;
-    -moz-overflow-scrolling: touch;
-    overflow-scrolling: touch;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-transform: translateZ(0px);
+}
+
+#container-user-info-full-repos > * {
+    -webkit-transform: translateZ(0px);
 }
 
 .user-info-full-repos{
